@@ -53,9 +53,9 @@ class ProjectsController < ApplicationController
       format.html { 
         @projects = Project.visible.find(:all, :order => 'lft') 
       }
-      format.xml  {
-        @projects = Project.visible.find(:all, :order => 'lft')
-      }
+#      format.xml  {
+#        @projects = Project.visible.find(:all, :order => 'lft')
+#      }
       format.atom {
         projects = Project.visible.find(:all, :order => 'created_on DESC',
                                               :limit => Setting.feeds_limit.to_i)
